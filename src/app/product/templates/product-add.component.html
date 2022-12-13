@@ -1,0 +1,59 @@
+<div class="container" >
+    <form #formProduct="ngForm" (ngSubmit)="handleSubmit(formProduct.value)">
+        <div class="form-group">
+            <label for="name">Tên tour</label>
+            <input
+            ngModel
+            #name="ngModel"
+            required
+            minlength="3"
+            type="text" class="form-control" name="name" placeholder="Name" >
+
+            <!-- Show validate -->
+            <p *ngIf="name.invalid && (name.dirty || name.touched) && name.errors?.['required']"
+            class="help-block text-danger">Tên tour không được để trống</p>
+
+            <p *ngIf="name.invalid && (name.dirty || name.touched) && name.errors?.['minlength']"
+            class="help-block text-danger">Minlength not valid</p>
+        </div>
+        <div class="form-group">
+            <label for="price">Giá</label>
+            <input
+            ngModel
+            #price="ngModel"
+            required
+            minlength="3"
+            type="text" class="form-control" name="price" placeholder="Price" >
+
+            <!-- Show validate -->
+             <!-- Show validate -->
+             <p *ngIf="name.invalid && (price.dirty || price.touched) && price.errors?.['required']"
+             class="help-block text-danger">Giá tour không được để trống</p>
+
+             <p *ngIf="price.invalid && (price.dirty || price.touched) && price.errors?.['minlength']"
+             class="help-block text-danger">Minlength not valid</p>
+
+        </div>
+
+        <div class="form-group">
+          <label for="name">Mô tả</label>
+          <input
+          ngModel
+          #name="ngModel"
+          required
+          minlength="3"
+          type="text" class="form-control" name="description" placeholder="description" >
+
+          <!-- Show validate -->
+          <p *ngIf="name.invalid && (name.dirty || name.touched) && name.errors?.['required']"
+          class="help-block text-danger">Mô tả tour không được để trống</p>
+
+          <p *ngIf="name.invalid && (name.dirty || name.touched) && name.errors?.['minlength']"
+          class="help-block text-danger">Minlength not valid</p>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" [disabled]="!formProduct.valid" class="btn btn-primary">Thêm</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,30 @@
+<div class="container">
+  <a [routerLink]="[ '/add']" class="btn btn-primary">Thêm mới</a>
+    <table class="table table-light">
+        <thead>
+            <tr>
+                <td>#</td>
+                <td>Tour</td>
+                <td>Price</td>
+                <td>description</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let product of products, let idx = index">
+                <td>{{ product.id }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.description }}</td>
+                <td>
+                    <a [routerLink]="[product.id + '/edit']" class="btn btn-warning">Edit</a> |
+                    <a [routerLink]="[product.id + '/delete']" class="btn btn-danger">Delete</a>|
+                    <a [routerLink]="[product.id + '/show']" class="btn btn-primary">show</a>|
+                    <!-- <button (click)="handleDelete(id)" type="button" class="btn btn-primary">OK</button> -->
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>

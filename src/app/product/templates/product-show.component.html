@@ -1,0 +1,7 @@
+<h1> {{ product.id }}</h1>
+<h1> {{ product.name }}</h1>
+<h1> {{ product.price }}</h1>
+<h1> {{ product.description }}</h1>
+<button (click)="handleDelete(id)" type="button" class="btn btn-primary">OK</button>
+
+<a [routerLink]="['/']" class="btn btn-secondary">Hủy</a>
